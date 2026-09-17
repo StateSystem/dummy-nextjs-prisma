@@ -1,0 +1,25 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #202938;
+  background: #f5f7fa;
+  line-height: 1.6;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+main {
+  box-sizing: border-box;
+  width: min(40rem, calc(100% - 2rem));
+  padding: clamp(1.5rem, 5vw, 3rem);
+  background: #fff;
+  border: 1px solid #dce2eb;
+  border-radius: 0.75rem;
+}
+.caption { color: #405573; }
+h1 { font-size: clamp(2rem, 7vw, 3rem); line-height: 1.2; }
+a { color: #165bb5; }
+
+h1 { overflow-wrap: anywhere; }
