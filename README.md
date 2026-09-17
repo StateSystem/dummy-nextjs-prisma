@@ -3,14 +3,9 @@
 - 対象: EV058, EV060, EV133, EV163, EV164。
 - 起動: `npm ci` の後、`DATABASE_URL` を設定し、下記の初期化を行って `npm run build && npm start`。
 - デフォルト PORT: 3000。環境変数 `PORT` で変更可。待受: `0.0.0.0`。
-- ブランチ: `main` のみ、デフォルトも `main`。ルートに Dockerfile あり。
+- ブランチ: `main` のみ、デフォルトも `main`。Dockerfile なし。Next.js の通常ビルド・起動経路で検証する。
 - Node.js 22 以上。`GET /health` は HTTP 200 と `{"ok":true,"app":"dummy-nextjs-prisma"}` を返す。
 
-## Docker
-
-```sh
-docker build -t dummy-nextjs-prisma .
-```
 
 ## データベース
 
@@ -30,8 +25,6 @@ npm run build
 npm start
 ```
 
-Docker の起動には実際の接続 URL を設定してから `docker run --rm -p 3000:3000 -e DATABASE_URL dummy-nextjs-prisma` を使用する。
-DB はコンテナから接続可能で、初期化済みであること。Docker build に接続情報は不要。
 
 SQL コンソールで対象 schema を選択し、次のように手動で投入するとトップ画面に表示される。
 schema が検索パスにない場合は、実際の schema 名でテーブルを修飾する。
